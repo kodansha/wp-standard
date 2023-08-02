@@ -9,7 +9,8 @@ services:
     extra_hosts:
       - "localhost.localdomain:host-gateway"
     depends_on:
-      - cms-mysql
+      cms-mysql:
+        condition: service_healthy
 
   cms-nginx:
     build:
@@ -33,6 +34,11 @@ services:
       MYSQL_ROOT_HOST: "%"
     volumes:
       - cms-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
   cms-mysql-data:
