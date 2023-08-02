@@ -1,0 +1,38 @@
+services:
+  cms-wordpress:
+    build:
+      context: ./docker/cms/wordpress
+      dockerfile: development/Dockerfile
+    init: true
+    volumes:
+      - .:/workspaces/wp-standard:cached
+    extra_hosts:
+      - "localhost.localdomain:host-gateway"
+    depends_on:
+      - cms-mysql
+
+  cms-nginx:
+    build:
+      context: ./docker/cms/nginx
+      dockerfile: development/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - .:/workspaces/wp-standard:cached
+    depends_on:
+      - cms-wordpress
+
+  cms-mysql:
+    image: mysql/mysql-server:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "33060:3306"
+    environment:
+      MYSQL_DATABASE: "wp_standard"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - cms-mysql-data:/var/lib/mysql
+
+volumes:
+  cms-mysql-data:
