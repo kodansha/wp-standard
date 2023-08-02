@@ -10,7 +10,7 @@ WP Standard は、KODANSHA tech チームの標準的な WordPress 構成を提�
 - [主な特徴](#主な特徴)
 - [これを用意している理由](#これを用意している理由)
   - [Bedrock 採用の理由](#bedrock-採用の理由)
-- [VS Code Dev Container を標準的な開発環境として利用する理由](#vs-code-dev-container-を標準的な開発環境として利用する理由)
+  - [VS Code Dev Container を標準的な開発環境として利用する理由](#vs-code-dev-container-を標準的な開発環境として利用する理由)
 - [具体的な開発方法について](#具体的な開発方法について)
   - [開発フロー](#開発フロー)
 - [テーマのサンプル実装](#テーマのサンプル実装)
@@ -73,7 +73,7 @@ Bedrock をご存知なかった場合に詳細を知りたい場合には、Bed
 
 https://kinsta.com/jp/blog/bedrock-trellis/
 
-## VS Code Dev Container を標準的な開発環境として利用する理由
+### VS Code Dev Container を標準的な開発環境として利用する理由
 
 WP Standard は [Visual Studio の Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) という拡張機能を利用して開発環境を構築することを前提としています。
 
@@ -179,8 +179,6 @@ cp .env.example .env
 VS Code のコマンドパレットから **Dev Containers: Open Folder in Container...** を実行し、`cms` ディレクトリを指定してください。
 
 それだけで、`.devcontainer` ディレクトリに格納された各種設定情報にしたがって、自動的に Docker コンテナ内の開発環境が起動します。
-
-注意事項:
 
 > **Note**
 > - 初回起動時には、Docker イメージのダウンロードなども行うので、上記実行に多少時間がかかります。エラーがなければ待っていれば終了します
