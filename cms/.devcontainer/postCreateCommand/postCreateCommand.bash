@@ -19,7 +19,8 @@ wp core install \
 
 # Activate plugins
 wp plugin activate \
-  killer-pads \
+  advanced-custom-fields \
+  wp-multibyte-patch \
   --allow-root
 
 # Switch language to ja
