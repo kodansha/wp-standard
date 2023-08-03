@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Roots">
-  <description>Roots Coding Standards</description>
+<ruleset name="WPStandard">
+  <description>WP Standard Coding Standards</description>
 
   <!-- Scan all files in directory -->
   <file>.</file>
@@ -10,8 +10,9 @@
 
   <!-- Ignore WordPress and Composer dependencies -->
   <exclude-pattern>web/wp</exclude-pattern>
-  <exclude-pattern>web/app/themes/twentytwentythree/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
+  <!-- Uncomment the following line if you would like to exclude the theme -->
+  <!-- <exclude-pattern>web/app/themes/default-theme/</exclude-pattern> -->
 
   <!-- Show colors in console -->
   <arg value="-colors"/>
@@ -19,6 +20,9 @@
   <!-- Show sniff codes in all reports -->
   <arg value="ns"/>
 
-  <!-- Use PSR-2 as a base -->
-  <rule ref="PSR2"/>
+  <!-- Use PSR-12 as a base -->
+  <rule ref="PSR12"/>
+
+  <!-- Custom Rules -->
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
 </ruleset>
