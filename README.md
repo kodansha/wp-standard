@@ -52,7 +52,7 @@ WP Standard の主な特徴は以下です。
 
 ### Bedrock 採用の理由
 
-一般的な WordPress 構成とこの WP Standard で最も異なる点はこの Bedrock の採用だと思います。
+一般的な WordPress 構成とこの WP Standard で最も異なる点はこの [Bedrock](https://roots.io/bedrock/) の採用だと思います。
 
 これは、以下の理由によるものです。
 
