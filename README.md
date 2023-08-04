@@ -42,7 +42,7 @@ WP Standard は、以下の目的のために用意されています。
 WP Standard の主な特徴は以下です。
 
 - テンプレートとして [Bedrock](https://roots.io/bedrock/) を採用している
-- ローカル開発は VS Code Dev Container を利用することを前提としている
+- ローカル開発は [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) を利用することを前提としている
 
 ## これを用意している理由
 
