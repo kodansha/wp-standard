@@ -35,11 +35,11 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.2.2",
+    "roots/wordpress": "6.3.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
     "koodimonni-language/ja": "6.1",
-    "wpackagist-plugin/advanced-custom-fields": "6.1.7",
+    "wpackagist-plugin/advanced-custom-fields": "6.2.1",
     "wpackagist-plugin/wp-multibyte-patch": "2.9"
   },
   "require-dev": {
@@ -83,9 +83,6 @@
     }
   },
   "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
-    ],
     "test": [
       "phpcs"
     ]
