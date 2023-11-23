@@ -39,7 +39,7 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
     "koodimonni-language/ja": "6.4.1",
-    "wpackagist-plugin/advanced-custom-fields": "6.2.1",
+    "wpackagist-plugin/advanced-custom-fields": "6.2.3",
     "wpackagist-plugin/wp-multibyte-patch": "2.9"
   },
   "require-dev": {
