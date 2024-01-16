@@ -159,32 +159,19 @@ WP Standard のテーマである `default-theme` は、画面も無い空っぽ
 
 繰り返しになりますが、Dev Container は Docker を利用しますので、事前に Docker 環境をご用意ください。
 
-> **Note**
+> [!NOTE]
 > 現在、ローカル開発環境は macOS + Docker Desktop のみで動作確認をしています。
 > それ以外の環境でも同じように動作するように構成していますが、もし不具合などあればご報告お願いします。
 
-### 事前準備
-
-> **Note**
-> 以下、コマンドは全て `cms` ディレクトリで実行してください。
-
-環境変数を設定するための `.env` ファイルをサンプルファイルから作成します。
-
-```text
-cp .env.example .env
-```
-
-開発用途の場合、`.env` ファイルの内容を変更せずそのまま利用しても問題ありません。
-
 ### 開発環境の起動
 
-VS Code のコマンドパレットから **Dev Containers: Open Folder in Container...** を実行し、`cms` ディレクトリを指定してください。
+VS Code で clone したフォルダーをワークスペースとして開き、**Dev Containers: Reopen in Container** を実行してください。
 
 それだけで、`.devcontainer` ディレクトリに格納された各種設定情報にしたがって、自動的に Docker コンテナ内の開発環境が起動します。
 
-> **Note**
+> [!NOTE]
 > - 初回起動時には、Docker イメージのダウンロードなども行うので、上記実行に多少時間がかかります。エラーがなければ待っていれば終了します
-> - Dev Container の起動や動作に不具合があると思われるときは、まず **Dev-Containers: Rebuild Container** を実行してコンテナの再ビルドをお試しください
+> - Dev Container の起動や動作に不具合があると思われるときは、まず **Dev Containers: Rebuild Container** を実行してコンテナの再ビルドをお試しください
 > - ごく稀に、再ビルドなどを実行してもどうしても復旧しない場合があります。そのときな、データベースのデータは初期化されますが、Docker ボリュームの削除が有効なことがあります。その際には `docker volume ls` や Docker Desktop アプリケーションのダッシュボードからボリュームを特定し、個別に削除してください
 
 実行が完了すると、すぐにブラウザで WordPress 管理画面にアクセスできるようになります。
@@ -193,7 +180,7 @@ VS Code のコマンドパレットから **Dev Containers: Open Folder in Conta
   - ユーザー: `admin`
   - パスワード: `admin`
 
-> **Note**
+> [!NOTE]
 > Dev Container でローカル開発する場合の WordPress の URL は上記の通りループバックアドレスに解決される `localhost.localdomain` ドメインとポート 80 を利用します。
 > これは、コンテナ側とホスト側が異なるドメイン・ポートを利用すると REST API や WP Cron の動作に問題が発生するのを回避するためです。
 > どうしても既存のサービスとポート番号が被っていて開発しにくい、などあれば別途ご相談ください。
@@ -218,7 +205,7 @@ cms/web/app/themes/default-theme/acf-json
 
 テーマ開発のコードスタイルは [PSR-12](https://www.php-fig.org/psr/psr-12/) のコーディングスタイルに準拠しています。
 
-> **Note**
+> [!NOTE]
 > WordPress のコーディング規約ではないので注意。
 > 設定内容は `cms/phpcs.xml` を参照ください。
 
@@ -242,7 +229,7 @@ cms/web/app/themes/default-theme/acf-json
 composer require wpackagist-plugin/wp-multibyte-patch:2.8.5
 ```
 
-> **Note**
+> [!NOTE]
 > プラグインのバージョンはできる限り厳密にマイナーバージョン、パッチバージョンまで指定するようにしてください。
 
 ### デバッガー
@@ -264,18 +251,19 @@ Dev Container では Xdebug が有効になっています。
 
 `cms` というディレクトリに分離しておくことで、こういった整理をしやすくしています。
 
-### Node / NPM の環境が必要な場合は？
+### Node.js / NPM の環境が必要な場合は？
 
 例えば、
 
 - Gutenberg エディタのカスタマイズやブロックの追加をしたい場合
 - Sass や TypeScript などのコンパイルが必要な場合
 
-こういった場合に、Node / NPM が必要になると思います。
+こういった場合に、Node.js / NPM が必要になると思います。
 
-WP Standard は最小構成を意識しているので、デフォルトではこれらを実行することはできません。
+WP Standard には Node.js 実行環境が含まれているので、特に追加の設定の必要なく利用することができます。
 
-こういった要件がある場合は別途個別にご相談ください。
+> [!NOTE]
+> 同梱する Node.js のバージョンは、原則として最新の LTS バージョンになります。
 
 ### メディアライブラリにアップロードされる画像などのアップロード先は？
 

@@ -1,6 +1,17 @@
+# 公式 Node イメージ
+# 後に Node 実行ファイルやライブラリをコピーするために利用する
+FROM node:20-slim as node
+
+# ベースイメージ
 FROM ghcr.io/kodansha/bedrock:php8.2-fpm
 
-ENV WEB_ROOT /workspaces/wp-standard
+# 公式の Docker Node イメージから必要なファイルをコピーする
+# これは、deb パッケージのインストールに依存する依存関係パッケージのインストール (Python3) を避けるのと、
+# Nodesource やその他インストーラーに依存すると、それらが変更されたり削除されたりした場合にまずいため。
+COPY --from=node /usr/local/include/ /usr/local/include/
+COPY --from=node /usr/local/lib/ /usr/local/lib/
+COPY --from=node /usr/local/bin/ /usr/local/bin/
+RUN corepack disable && corepack enable
 
 RUN apt-get update && apt-get install -y \
     locales \
@@ -33,5 +44,3 @@ RUN { \
     echo 'xdebug.client_host=localhost'; \
     echo 'xdebug.client_port=9003'; \
     } > /usr/local/etc/php/conf.d/custom-xdebug.ini
-
-WORKDIR ${WEB_ROOT}

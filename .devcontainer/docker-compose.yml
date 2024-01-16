@@ -1,27 +1,27 @@
 services:
-  wordpress:
+  app:
     build:
-      context: ./docker/wordpress
+      context: ./docker/app
     init: true
     volumes:
-      - ../..:/workspaces/wp-standard:cached
+      - ..:/workspaces/wp-standard:cached
     extra_hosts:
       - "localhost.localdomain:host-gateway"
     depends_on:
-      mysql:
+      db:
         condition: service_healthy
 
-  nginx:
+  web:
     build:
-      context: ./docker/nginx
+      context: ./docker/web
     ports:
       - "80:80"
     volumes:
-      - ../..:/workspaces/wp-standard:cached
+      - ..:/workspaces/wp-standard:cached
     depends_on:
-      - wordpress
+      - app
 
-  mysql:
+  db:
     image: mysql:8.0
     ports:
       - "33060:3306"
@@ -29,7 +29,7 @@ services:
       MYSQL_DATABASE: "wp_standard"
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - mysql-data:/var/lib/mysql
+      - db-data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
@@ -37,4 +37,4 @@ services:
       retries: 10
 
 volumes:
-  mysql-data:
+  db-data:

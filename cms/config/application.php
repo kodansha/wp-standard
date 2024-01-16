@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Your base production configuration goes in this file. Environment-specific
  * overrides go in their respective config/environments/{{WP_ENV}}.php file.
@@ -9,6 +10,7 @@
  */
 
 use Roots\WPConfig\Config;
+
 use function Env\env;
 
 /**
@@ -165,9 +167,3 @@ if (!defined('ABSPATH')) {
  * (See web/app/mu-plugins/register-theme-directory.php for details)
  */
 define('WP_DEFAULT_THEME', 'default-theme');
-
-/**
- * Killer Pads
- * https://github.com/kodansha/killer-pads
- */
-define('KILLER_PADS_NAMESPACE_WHITELIST', ['wp/v2']);

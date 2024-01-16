@@ -2,5 +2,5 @@
   "[php]": {
     "editor.tabSize": 4,
     "editor.defaultFormatter": "valeryanm.vscode-phpsab"
-  },
+  }
 }
