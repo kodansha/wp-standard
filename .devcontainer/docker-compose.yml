@@ -6,7 +6,7 @@ services:
     volumes:
       - ..:/workspaces/wp-standard:cached
     extra_hosts:
-      - "localhost.localdomain:host-gateway"
+      - "mylocaldoma.in:host-gateway"
     depends_on:
       db:
         condition: service_healthy

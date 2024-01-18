@@ -176,12 +176,12 @@ VS Code で clone したフォルダーをワークスペースとして開き�
 
 実行が完了すると、すぐにブラウザで WordPress 管理画面にアクセスできるようになります。
 
-- 管理画面ログイン: http://localhost.localdomain/wp/wp-login.php
+- 管理画面ログイン: http://mylocaldoma.in/wp/wp-login.php
   - ユーザー: `admin`
   - パスワード: `admin`
 
 > [!NOTE]
-> Dev Container でローカル開発する場合の WordPress の URL は上記の通りループバックアドレスに解決される `localhost.localdomain` ドメインとポート 80 を利用します。
+> Dev Container でローカル開発する場合の WordPress の URL は上記の通りループバックアドレスに解決される `mylocaldoma.in` ドメインとポート 80 を利用します。
 > これは、コンテナ側とホスト側が異なるドメイン・ポートを利用すると REST API や WP Cron の動作に問題が発生するのを回避するためです。
 > どうしても既存のサービスとポート番号が被っていて開発しにくい、などあれば別途ご相談ください。
 
