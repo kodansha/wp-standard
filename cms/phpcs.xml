@@ -11,6 +11,9 @@
   <!-- Ignore WordPress and Composer dependencies -->
   <exclude-pattern>web/wp</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
+  <!-- Ignore plugins -->
+  <exclude-pattern>web/app/mu-plugins/</exclude-pattern>
+  <exclude-pattern>web/app/plugins/</exclude-pattern>
   <!-- Uncomment the following line if you would like to exclude the theme -->
   <!-- <exclude-pattern>web/app/themes/default-theme/</exclude-pattern> -->
 
@@ -24,5 +27,11 @@
   <rule ref="PSR12"/>
 
   <!-- Custom Rules -->
-  <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
+  <rule ref="Generic.Arrays.ArrayIndent"/>
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+  <rule ref="Generic.PHP.DeprecatedFunctions"/>
+  <rule ref="Generic.Commenting.DocComment"/>
+  <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
 </ruleset>
