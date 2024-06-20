@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Your base production configuration goes in this file. Environment-specific
  * overrides go in their respective config/environments/{{WP_ENV}}.php file.
@@ -10,8 +9,10 @@
  */
 
 use Roots\WPConfig\Config;
-
 use function Env\env;
+
+// USE_ENV_ARRAY + CONVERT_* + STRIP_QUOTES
+Env\Env::$options = 31;
 
 /**
  * Directory containing all of the site's files
@@ -36,7 +37,7 @@ if (file_exists($root_dir . '/.env')) {
         ? ['.env', '.env.local']
         : ['.env'];
 
-    $dotenv = Dotenv\Dotenv::createUnsafeImmutable($root_dir, $env_files, false);
+    $dotenv = Dotenv\Dotenv::createImmutable($root_dir, $env_files, false);
 
     $dotenv->load();
 

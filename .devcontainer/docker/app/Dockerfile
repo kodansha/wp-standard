@@ -3,7 +3,7 @@
 FROM node:20-slim as node
 
 # ベースイメージ
-FROM ghcr.io/kodansha/bedrock:php8.2-fpm
+FROM ghcr.io/kodansha/bedrock:php8.3-fpm
 
 # 公式の Docker Node イメージから必要なファイルをコピーする
 # これは、deb パッケージのインストールに依存する依存関係パッケージのインストール (Python3) を避けるのと、

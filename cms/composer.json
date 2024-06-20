@@ -29,13 +29,13 @@
     }
   ],
   "require": {
-    "php": "~8.2.0",
+    "php": "~8.3.0",
     "composer/installers": "^2.2",
     "vlucas/phpdotenv": "^5.5",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.4.2",
+    "roots/wordpress": "6.5.4",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
     "koodimonni-language/ja": "6.4.2",
