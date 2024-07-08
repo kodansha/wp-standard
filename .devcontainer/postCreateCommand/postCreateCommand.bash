@@ -28,6 +28,8 @@ WordPress の設定
 --------------------------------------------------------------------------------
 EOS
 
+export WP_CLI_ALLOW_ROOT=1
+
 # Install WordPress
 wp core install \
   --url="http://mylocaldoma.in" \
@@ -35,28 +37,26 @@ wp core install \
   --admin_user="admin" \
   --admin_password="admin" \
   --admin_email="admin@example.com" \
-  --skip-email \
-  --allow-root
+  --skip-email
 
 # Activate plugins
 wp plugin activate \
-  wp-multibyte-patch \
-  --allow-root
+  wp-multibyte-patch
 
 # Switch language to ja
-wp site switch-language ja --allow-root
+wp site switch-language ja
 
 # Set permalink structure
-wp option update permalink_structure '/%postname%/' --allow-root
+wp option update permalink_structure '/%postname%/'
 
 # Set timezone
-wp option update timezone_string 'Asia/Tokyo' --allow-root
+wp option update timezone_string 'Asia/Tokyo'
 
 # Set date format
-wp option update date_format 'Y年n月j日' --allow-root
+wp option update date_format 'Y年n月j日'
 
 # Set time format
-wp option update time_format 'H:i' --allow-root
+wp option update time_format 'H:i'
 
 cat << EOS
 ================================================================================
