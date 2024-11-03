@@ -1,23 +1,23 @@
 services:
   app:
-    build:
-      context: ./docker/app
+    image: ghcr.io/kodansha/bedrock:php8.3-fpm
     init: true
     volumes:
       - ..:/workspaces/wp-standard:cached
+      - ./config/app/custom.ini:/usr/local/etc/php/conf.d/custom.ini
     extra_hosts:
-      - "mylocaldoma.in:host-gateway"
+      - "dev.mylocaldoma.in:host-gateway"
     depends_on:
       db:
         condition: service_healthy
 
   web:
-    build:
-      context: ./docker/web
+    image: nginx:latest
     ports:
       - "80:80"
     volumes:
       - ..:/workspaces/wp-standard:cached
+      - ./config/web/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
 

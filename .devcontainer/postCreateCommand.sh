@@ -32,7 +32,7 @@ export WP_CLI_ALLOW_ROOT=1
 
 # Install WordPress
 wp core install \
-  --url="http://mylocaldoma.in" \
+  --url="http://dev.mylocaldoma.in" \
   --title="wp-standard" \
   --admin_user="admin" \
   --admin_password="admin" \
@@ -66,7 +66,7 @@ Dev Container のセットアップが完了しました。
 
 以下の URL から WordPress 管理画面にアクセスできます。初期管理者でログインしてください。
 
-Admin URL : http://mylocaldoma.in/wp/wp-login.php
+Admin URL : http://dev.mylocaldoma.in/wp/wp-login.php
 User      : admin
 Password  : admin
 
