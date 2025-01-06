@@ -1,6 +1,6 @@
 {
   "[php]": {
     "editor.tabSize": 4,
-    "editor.defaultFormatter": "valeryanm.vscode-phpsab"
+    "editor.defaultFormatter": "open-southeners.laravel-pint"
   }
 }

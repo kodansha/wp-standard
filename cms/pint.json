@@ -1,0 +1,14 @@
+{
+  "preset": "per",
+  "exclude": [
+    "web/wp",
+    "web/app/mu-plugins/bedrock-disallow-indexing",
+    "web/app/plugins"
+  ],
+  "rules": {
+    "array_indentation": true,
+    "array_syntax": {
+      "syntax": "short"
+    }
+  }
+}

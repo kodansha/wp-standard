@@ -28,14 +28,10 @@
     "postCreateCommand": ".devcontainer/postCreateCommand.sh",
     "customizations": {
         "vscode": {
-            "settings": {
-                "phpsab.executablePathCS": "/workspaces/wp-standard/cms/vendor/bin/phpcs",
-                "phpsab.executablePathCBF": "/workspaces/wp-standard/cms/vendor/bin/phpcbf"
-            },
             "extensions": [
                 "bmewburn.vscode-intelephense-client",
                 "xdebug.php-debug",
-                "ValeryanM.vscode-phpsab",
+                "open-southeners.laravel-pint",
                 "mikestead.dotenv"
             ]
         }

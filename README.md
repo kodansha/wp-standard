@@ -203,18 +203,18 @@ cms/web/app/themes/default-theme/acf-json
 
 ### コードスタイル
 
-テーマ開発のコードスタイルは [PSR-12](https://www.php-fig.org/psr/psr-12/) のコーディングスタイルに準拠しています。
+テーマ開発のコードスタイルは [PER](https://www.php-fig.org/per/coding-style/) のコーディングスタイルに準拠しています。
 
 > [!NOTE]
 > WordPress のコーディング規約ではないので注意。
-> 設定内容は `cms/phpcs.xml` を参照ください。
+> 設定内容は `cms/pint.json` を参照ください。
 
 コードスタイルについては、Dev Container を利用して開発する場合は、必要パッケージと拡張機能がデフォルトインストールされるので、エディタ上の指示に従えば良いです。自動フォーマットも有効です。
 
-もし、テーマのコーディングに対してもこのスタイルが適用されてしまうと開発に不都合がある、という場合は、`cms/phpcs.xml` の以下の行のコメントアウトを解除してください。
+もし、テーマのコーディングに対してもこのスタイルが適用されてしまうと開発に不都合がある、という場合は、`cms/pint.json` の `exclude` 配列に以下を追加してください。
 
-```xml
-  <!-- <exclude-pattern>web/app/themes/default-theme/</exclude-pattern> -->
+```text
+    "web/app/themes/default-theme/"
 ```
 
 これで、テーマのディレクトリをコードスタイルのチェック対象から除外することができます。
