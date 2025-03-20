@@ -93,7 +93,7 @@ Config::define('DB_PASSWORD', env('DB_PASSWORD'));
 // Support for cases where the database connection port has been changed for security reasons, etc.
 if (env('DB_HOST') && env('DB_PORT')) {
     Config::define('DB_HOST', env('DB_HOST') . ':' . env('DB_PORT'));
-} else if (env('DB_HOST')) {
+} elseif (env('DB_HOST')) {
     Config::define('DB_HOST', env('DB_HOST'));
 } else {
     Config::define('DB_HOST', 'localhost');
@@ -178,9 +178,3 @@ if (!defined('ABSPATH')) {
  * (See web/app/mu-plugins/register-theme-directory.php for details)
  */
 define('WP_DEFAULT_THEME', 'default-theme');
-
-/**
- * Killer Pads
- * https://github.com/kodansha/killer-pads
- */
-define('KILLER_PADS_NAMESPACE_WHITELIST', ['wp/v2']);

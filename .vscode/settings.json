@@ -1,6 +1,5 @@
 {
   "[php]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "open-southeners.laravel-pint"
+    "editor.tabSize": 4
   }
 }

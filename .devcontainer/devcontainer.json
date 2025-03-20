@@ -28,10 +28,17 @@
     "postCreateCommand": ".devcontainer/postCreateCommand.sh",
     "customizations": {
         "vscode": {
+            "settings": {
+                "laravel-pint-fixer.pintBinPath": "/workspaces/wp-standard/cms/vendor/bin/pint",
+                "laravel-pint-fixer.pintConfigPath": "/workspaces/wp-standard/cms/pint.json",
+                "[php]": {
+                    "editor.defaultFormatter": "evgenius33.laravel-pint-fixer"
+                }
+            },
             "extensions": [
                 "bmewburn.vscode-intelephense-client",
                 "xdebug.php-debug",
-                "open-southeners.laravel-pint",
+                "evgenius33.laravel-pint-fixer",
                 "mikestead.dotenv"
             ]
         }

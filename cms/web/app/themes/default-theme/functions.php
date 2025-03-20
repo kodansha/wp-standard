@@ -21,19 +21,19 @@ add_action('init', function () {
             'public' => true,
             'show_ui' => true,
             'menu_position' => 5,
-            'supports'=> ['title', 'thumbnail', 'editor'],
-            'show_in_rest' => true
-        ]
+            'supports' => ['title', 'thumbnail', 'editor'],
+            'show_in_rest' => true,
+        ],
     );
 
     register_taxonomy(
         'news-cat',
         'news',
         [
-          'label' => 'ニュースカテゴリー',
-          'hierarchical' => true,
-          'public' => true,
-          'show_in_rest' => true,
-        ]
+            'label' => 'ニュースカテゴリー',
+            'hierarchical' => true,
+            'public' => true,
+            'show_in_rest' => true,
+        ],
     );
 });
