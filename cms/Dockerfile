@@ -2,7 +2,7 @@
 
 # 公式 Node イメージ
 # 後に Node 実行ファイルやライブラリをコピーするために利用する
-FROM node:20-slim as node
+FROM node:22-slim AS node
 
 # ベースイメージ
 FROM ghcr.io/kodansha/bedrock:php8.3-fpm
@@ -13,7 +13,6 @@ FROM ghcr.io/kodansha/bedrock:php8.3-fpm
 COPY --from=node /usr/local/include/ /usr/local/include/
 COPY --from=node /usr/local/lib/ /usr/local/lib/
 COPY --from=node /usr/local/bin/ /usr/local/bin/
-RUN corepack disable && corepack enable
 
 RUN apt-get update && apt-get install -y \
     locales \
@@ -23,7 +22,7 @@ RUN apt-get update && apt-get install -y \
 # ロケールの構成
 RUN sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen \
     && locale-gen
-ENV LANG ja_JP.UTF-8
+ENV LANG=ja_JP.UTF-8
 
 # PHP 設定のカスタマイズ
 RUN { \
