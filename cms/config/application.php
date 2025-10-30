@@ -26,7 +26,7 @@ $root_dir = dirname(__DIR__);
 /**
  * Document Root
  *
- * @var string
+ * @var non-falsy-string
  */
 $webroot_dir = $root_dir . '/web';
 
@@ -93,7 +93,7 @@ Config::define('DB_PASSWORD', env('DB_PASSWORD'));
 // Support for cases where the database connection port has been changed for security reasons, etc.
 if (env('DB_HOST') && env('DB_PORT')) {
     Config::define('DB_HOST', env('DB_HOST') . ':' . env('DB_PORT'));
-} elseif (env('DB_HOST')) {
+} else if (env('DB_HOST')) {
     Config::define('DB_HOST', env('DB_HOST'));
 } else {
     Config::define('DB_HOST', 'localhost');
