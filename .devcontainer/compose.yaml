@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/kodansha/bedrock:php8.4-fpm
+    image: ghcr.io/kodansha/bedrock:php8.5-fpm
     init: true
     volumes:
       - ..:/workspaces/wp-standard:cached
