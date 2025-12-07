@@ -11,6 +11,7 @@
   ],
   "repositories": [
     {
+      "name" : "wpackagist",
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": [
@@ -29,21 +30,20 @@
     }
   ],
   "require": {
-    "php": "~8.4.0",
+    "php": "~8.5.0",
     "composer/installers": "^2.2",
     "vlucas/phpdotenv": "^5.5",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.8.3",
+    "roots/wordpress": "6.9",
     "roots/wp-config": "1.0.0",
-    "koodimonni-language/ja": "6.8.3",
+    "koodimonni-language/ja": "6.9",
     "wpackagist-plugin/wp-multibyte-patch": "2.9.2",
-    "wpackagist-plugin/advanced-custom-fields": "6.6.2"
+    "wpackagist-plugin/advanced-custom-fields": "6.7.0"
   },
   "require-dev": {
-    "laravel/pint": "^1.18",
-    "roave/security-advisories": "dev-latest"
+    "laravel/pint": "^1.18"
   },
   "config": {
     "optimize-autoloader": true,
