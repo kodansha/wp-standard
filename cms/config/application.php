@@ -157,6 +157,18 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
     $_SERVER['HTTPS'] = 'on';
 }
 
+/**
+ * Enable WordPress Multisite
+ * Uncomment and modify the following lines to enable multisite functionality
+ */
+// Config::define('WP_ALLOW_MULTISITE', true);
+// Config::define('MULTISITE', true);
+// Config::define('SUBDOMAIN_INSTALL', true);
+// Config::define('DOMAIN_CURRENT_SITE', parse_url(env('WP_HOME'), PHP_URL_HOST));
+// Config::define('PATH_CURRENT_SITE', '/');
+// Config::define('SITE_ID_CURRENT_SITE', 1);
+// Config::define('BLOG_ID_CURRENT_SITE', 1);
+
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 
 if (file_exists($env_config)) {
