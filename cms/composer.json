@@ -11,7 +11,7 @@
   ],
   "repositories": [
     {
-      "name" : "wpackagist",
+      "name": "wpackagist",
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": [
