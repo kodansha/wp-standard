@@ -11,12 +11,12 @@
   ],
   "repositories": [
     {
-      "name": "wpackagist",
+      "name": "wp-packages",
       "type": "composer",
-      "url": "https://wpackagist.org",
+      "url": "https://repo.wp-packages.org",
       "only": [
-        "wpackagist-plugin/*",
-        "wpackagist-theme/*"
+        "wp-plugin/*",
+        "wp-theme/*"
       ]
     },
     {
@@ -32,27 +32,29 @@
   "require": {
     "php": "~8.5.0",
     "composer/installers": "^2.2",
-    "vlucas/phpdotenv": "^5.5",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.9",
+    "roots/wordpress": "6.9.4",
     "roots/wp-config": "1.0.0",
-    "koodimonni-language/ja": "6.9",
-    "wpackagist-plugin/wp-multibyte-patch": "2.9.2",
-    "wpackagist-plugin/advanced-custom-fields": "6.7.0"
+    "vlucas/phpdotenv": "^5.5",
+    "koodimonni-language/ja": "6.9.4",
+    "wp-plugin/wp-multibyte-patch": "2.9.3"
   },
   "require-dev": {
-    "laravel/pint": "^1.18"
+    "laravel/pint": "^1.27",
+    "pestphp/pest": "^4.0"
   },
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
+      "pestphp/pest-plugin": true,
       "roots/wordpress-core-installer": true,
       "koodimonni/composer-dropin-installer": true
-    }
+    },
+    "sort-packages": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -83,6 +85,7 @@
   },
   "scripts": {
     "lint": "pint --test",
-    "lint:fix": "pint"
+    "lint:fix": "pint",
+    "test": "pest"
   }
 }
