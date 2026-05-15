@@ -1,6 +1,7 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
+# Ignore Composer-installed mu-plugin directories; single-file mu-plugins are tracked intentionally
 web/app/mu-plugins/*/
 web/app/themes/twentytwentyfive/
 web/app/upgrade
@@ -23,15 +24,18 @@ web/.htaccess
 
 # Composer
 /vendor
+auth.json
+
+# PHPUnit/Pest
+phpunit.xml
+.phpunit.result.cache
+.phpunit.cache
 
 # WP-CLI
 wp-cli.local.yml
 
 # WordPress languages (installed via Composer https://wp-languages.github.io)
 web/app/languages/
-
-# Composer auth.json
-auth.json
 
 # Visual Studio Code
 .vscode/*
