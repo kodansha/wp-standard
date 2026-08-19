@@ -13,11 +13,7 @@
     {
       "name": "wp-packages",
       "type": "composer",
-      "url": "https://repo.wp-packages.org",
-      "only": [
-        "wp-plugin/*",
-        "wp-theme/*"
-      ]
+      "url": "https://repo.wp-packages.org"
     },
     {
       "type": "composer",
@@ -31,18 +27,18 @@
   ],
   "require": {
     "php": "~8.5.0",
-    "composer/installers": "^2.2",
-    "oscarotero/env": "^2.1",
+    "composer/installers": "^2.0",
+    "oscarotero/env": "^2.0",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.9.4",
-    "roots/wp-config": "1.0.0",
+    "roots/wordpress": "7.0.4",
+    "roots/wp-config": "^1.0",
     "vlucas/phpdotenv": "^5.5",
-    "koodimonni-language/ja": "6.9.4",
+    "koodimonni-language/ja": "7.0.4",
     "wp-plugin/wp-multibyte-patch": "2.9.3"
   },
   "require-dev": {
-    "laravel/pint": "^1.27",
+    "laravel/pint": "^1.0",
     "pestphp/pest": "^4.0"
   },
   "config": {
@@ -50,8 +46,8 @@
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
-      "pestphp/pest-plugin": true,
       "roots/wordpress-core-installer": true,
+      "pestphp/pest-plugin": true,
       "koodimonni/composer-dropin-installer": true
     },
     "sort-packages": true
